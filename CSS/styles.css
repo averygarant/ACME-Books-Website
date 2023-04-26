@@ -52,7 +52,7 @@ table{
 body {
 	font-family: Verdana, Geneva, sans-serif;
 	background-color: floralwhite;
-	background-image: url(../images/background.png)
+	background-image: url(../images/background.png);
 }
 .header-nav-container {
    background-color: #568259;
@@ -90,10 +90,29 @@ header div {
 	width: 125px;
 	height: 125px;
 }
+#title {
+	color: #f3fadc;
+}
+#title a:link {
+	color: #f3fadc;
+   text-decoration: none;
+}
+#title a:visited {
+	color: #f3fadc;
+}
+#title a:hover, #title a:focus {
+   	color: #f3fadc;
+}
+#title a:active {
+   position: relative;
+   top: 1px;
+   left: 1px;
+}
 
 /* site navigation */
 nav.sitenavigation {
-   max-width: 800px;
+   max-width: 1000px;
+   min-width: 800px;
    margin: 0 auto;
    background-color: #568259;
    color: #f3fadc; /*Meant to be text color?*/
@@ -124,21 +143,31 @@ nav.sitenavigation a:active {
    top: 1px;
    left: 1px;
 }
+nav.sitenavigation img {
+	width: 25px;
+	height: 25px;
+}
 
 /* main content */
 article {
-	width: 62.5%;
+	min-width: 800px;
 	padding-top: 2%;
 	padding-left: 3%;
 	padding-right: 3%;
-	float: left;
+	padding-bottom: 5%;
+	float: center;
 	background-color: floralwhite;
 	background-image: url(../images/background.png)
+}
+article h1{
+	text-align: center;
+	padding-bottom: 10px;
 }
 article h2 {
    margin: 0.4em 0.4em 0;
    font-size: 1.8em;
    font-weight: normal;
+   text-align: left;
 }
 article h3 {
    margin: 0.4em 0.4em 0;
@@ -152,6 +181,16 @@ article div p {
 }
 article p {
    margin: 0 1em 0.4em 1.4em;
+}
+#cover {
+	max-height: 200px;
+	max-width: 250px;
+	position: center;
+	min-width: 110px;
+}
+
+#spacing {
+	padding-bottom: 325px;
 }
 
 /* main content table if needed*/
@@ -215,11 +254,127 @@ footer {
 #footer {
 	position: absolute;
 	bottom: 0;
-	width: 100%;
+	width: 98%;
+	min-width: 800px;
 	height: 2.5rem;
 }
 footer p {
    margin: 0.4em;
+}
+
+/*Database Connections*/
+#databasesearch{
+	width: 50%;
+	padding: 10px;
+}
+.columnsplit{
+	float: left;
+	width: 45%;
+	padding: 10px;
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/*div specs*/
+#features{
+	border-width:2px;
+	border-style:solid;
+	border-color:black;
+	margin: auto;
+	width: 70%;
+	padding: 10px;
+}
+#saleFeatures{
+	border-width:2px;
+	border-style:solid;
+	border-color:black;
+	margin: 10px;
+	padding: 5px;
+	float: left;
+	width: 30%;
+}
+
+/*Login Form */
+form {
+  border: 3px solid #f1f1f1;
+}
+input[type=text], input[type=password], textarea {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+button {
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+button:hover {
+  opacity: 0.8;
+}
+.createnewbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #04AA6D;
+}
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+img.avatar {
+  width: 40%;
+  border-radius: 50%;
+}
+.container {
+  padding: 16px;
+}
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+.accounticon {
+	width: 100px;
+	height: 100px;
+}
+.sendemail{
+	width: auto;
+  padding: 10px 18px;
+  background-color: #04AA6D;
+}
+
+/*Inventory Request Form*/
+.inventoryform{
+	padding: 20px;
+}
+.inventoryform p, .inventoryform label{
+	font-size: 12pt;
+	text-align: left;
+	padding-left: 0;
+	margin-left: 0;
+}
+.inventoryform button{
+	padding: 10px 18px;
+	background-color: #568259;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+    display: block;
+    float: none;
+  }
+  .cancelbtn {
+    width: 100%;
+  }
 }
 
 /* print styles */

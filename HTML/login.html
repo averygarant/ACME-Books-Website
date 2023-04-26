@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>ACME Books</title>
+	
+		<link type="text/css" rel="stylesheet" href="../CSS/styles.css">
+		
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="ACME Books">
+		
+		<script src="../JavaScript/modernizr.custom.05819.js"></script>
+				
+		<!--
+			ACME Books,Login Page
+			Filename: login.html
+			Author: Avery Garant & Daniel Roede
+			Date: 
+		-->
+		
+	</head>
+	<body>
+		<form action="action_page.php" method="post">
+		  <div class="imgcontainer">
+			<img src="../images/account.png" alt="Account Icon" class="accounticon">
+		  </div>
+
+		  <div class="container">
+			<label for="uname"><b>Username</b></label>
+			<input type="text" placeholder="Enter Username" name="uname" required>
+
+			<label for="psw"><b>Password</b></label>
+			<input type="password" placeholder="Enter Password" name="psw" required>
+
+			<button type="submit">Login</button>
+			<label>
+			  <input type="checkbox" checked="checked" name="remember"> Remember me
+			</label>
+		  </div>
+
+		  <div class="container" style="background-color:#f1f1f1">
+			<button type="button" class="createnewbtn">Create New Account</button>
+			<span class="psw">Forgot <a href="forgotpassform.html">password?</a></span>
+		  </div>
+		</form>
+	</body>
+</html>

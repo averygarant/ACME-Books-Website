@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>ACME Books</title>
+	
+		<link type="text/css" rel="stylesheet" href="../CSS/styles.css">
+		
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="ACME Books">
+		
+		<script src="../JavaScript/modernizr.custom.05819.js"></script>
+				
+		<!--
+			ACME Books,Home Page
+			Filename: forgotpassform.html
+			Author: Avery Garant & Daniel Roede
+			Date: 
+		-->
+		
+	</head>
+	<body>
+		<form onsubmit="SubmitionAlert()" method="get">
+		  <div class="imgcontainer">
+			<h1>Password Recovery</h1>
+		  </div>
+		  <div class="container">
+			<p>Please enter your email below. We will send a password recovery link to your email within the next few hours.
+			If you do not receive an email in the next 24 hours you may not have an account with us under that email.</p>
+		  </div>
+		  <div class="container">
+			<label for="email"><b>Enter Email</b></label>
+			<input type="text" placeholder="Email" name="email" id="emailVal" required>
+		  </div>
+
+		  <div class="container" style="background-color:#f1f1f1">
+			<input type="submit" value="Send Recovery Email" class="sendemail"></button>
+		  </div>
+		  
+		  <p><a href="login.html">Back to login</a></p>
+		</form>
+	</body>
+</html>
+
+<script>
+	function SubmitionAlert() {
+	var emailValue = document.getElementById("emailVal").value;
+  alert("The recovery email has been sent to " + emailValue + " if an account exists under this email.");
+}
+</script>
