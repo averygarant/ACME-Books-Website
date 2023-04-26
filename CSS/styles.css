@@ -182,6 +182,16 @@ article div p {
 article p {
    margin: 0 1em 0.4em 1.4em;
 }
+#cover {
+	max-height: 200px;
+	max-width: 250px;
+	position: center;
+	min-width: 110px;
+}
+
+#spacing {
+	padding-bottom: 325px;
+}
 
 /* main content table if needed*/
 table{
