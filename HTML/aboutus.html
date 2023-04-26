@@ -4,12 +4,18 @@
 		<title>ACME Books</title>
 	
 		<link type="text/css" rel="stylesheet" href="../CSS/styles.css">
+		<link rel="icon" href="../images/ACME_Logo.png">		
 		
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="description" content="ACME Books">
 		
 		<script src="../JavaScript/modernizr.custom.05819.js"></script>
+		
+		<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+		<link rel="stylesheet" type="text/css" href="./style.css" />
+		<script type="module" src="./index.js"></script>
 				
 		<!--
 			ACME Books,About Us Page
@@ -34,19 +40,74 @@
 					<li><a href="otheritems.html">Other Items</a></li>
 					<li><a href="aboutus.html">About Us</a></li>
 					<li><a href="books.html"><img src="../images/searchicon.png" alt="Search" id="navicon"></a></li>
-					<li><a href="checkout.html"><img src="../images/cart.png" alt="Checkout" id="navicon"></a></li>
+					<li><a href="cart.html"><img src="../images/cart.png" alt="Cart" id="navicon"></a></li>
 					<li><a href="account.html"><img src="../images/account.png" alt="Account Login" id="navicon"></a></li>
 				</ul>
 			 </nav>
 		</div>
 		<article>
-			<h1>Our Mission</h1>
+		<div class="about">
+			<h1>About ACME Books</h1>
+			<hr>
+			<h3>Our History</h3>
+			<p>ACME Books was founded in 2013 in Grand Rapids, MI. We were founded on the hopes to provide the warmth that reading
+			brings readers, to the shopping experience everyone must take to find a new book. ACME books prioritizes
+			our customers and their experiences. Our goal is to bring the small town, local business feel to those across the 
+			country, and to offer more oppurtunities for Indie authors to have their books advertised. Every author works hard
+			to publish and get their book into the hands of loving readers, and we are always looking to help this happen easier.
+			Since our founding 10 years ago, we have helped over 130 independent authors increase their sales and become picked up
+			by large publication comapanies and we plan to help so many more.</p>
+			
+			<h3>Our Mission</h3>
 			<p>Our mission has always been to provide quality books to as many people as we can manage. In an age where technology is becoming
 			every more present, we believe it is important to remember some of the simpler things. Many of the older generation can remember many
 			lazy afternoons spent reading a good book, and our hope to allow for the creation of more of those memories, for those both young and old</p>
+		
+			<h3>Come Visit Us!</h3>
+			<p><b>Location:</b> 2660 28th St SE, Grand Rapids, MI 49512 | <b>Hours (EST):</b> M-F : 8am-8pm, S&S : 10am-5pm</p>
+			<div id="map"></div>
+
+			<!-- prettier-ignore -->
+			<script>(g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})
+				({key: "AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg", v: "beta"});
+			</script>
+					
+		</div>
 		</article>
 		<footer id="footer">
-			<p>Click <a href="aboutus.html">here</a> to learn more about us!</p>
+			<p><a href="terms.html">Terms of Use</a> | <a href="aboutus.html">About Us</a> | <a href="tel:5554280940">Call Us</a>
+			 | <a href="aboutus.html">Visit Our Store</a> | <a href="mailto: acmebooksMI.com">Send Us an Email</a></p>
 		</footer>
 	</body>
 </html>
+
+<script>
+	// Initialize and add the map
+let map;
+
+async function initMap() {
+  // The location of Uluru
+  const position = { lat: 42.912109591292435, lng: -85.60164841761123 };
+  // Request needed libraries.
+  //@ts-ignore
+  const { Map } = await google.maps.importLibrary("maps");
+  const { AdvancedMarkerView } = await google.maps.importLibrary("marker");
+
+  // The map, centered at Uluru
+  map = new Map(document.getElementById("map"), {
+    zoom: 4,
+    center: position,
+    mapId: "DEMO_MAP_ID",
+  });
+
+  // The marker, positioned at Uluru
+  const marker = new AdvancedMarkerView({
+    map: map,
+    position: position,
+    title: "Uluru",
+  });
+}
+
+initMap();
+</script>
+    

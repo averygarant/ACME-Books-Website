@@ -4,12 +4,14 @@
 		<title>ACME Books</title>
 	
 		<link type="text/css" rel="stylesheet" href="../CSS/styles.css">
+		<link rel="icon" href="../images/ACME_Logo.png">
 		
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="description" content="ACME Books">
 		
 		<script src="../JavaScript/modernizr.custom.05819.js"></script>
+		<script src="../JavaScript/javascript.js"></script>
 				
 		<!--
 			ACME Books,Home Page
@@ -34,18 +36,142 @@
 					<li><a href="otheritems.html">Other Items</a></li>
 					<li><a href="aboutus.html">About Us</a></li>
 					<li><a href="books.html"><img src="../images/searchicon.png" alt="Search" id="navicon"></a></li>
-					<li><a href="checkout.html"><img src="../images/cart.png" alt="Checkout" id="navicon"></a></li>
+					<li><a href="cart.html"><img src="../images/cart.png" alt="Cart" id="navicon"></a></li>
 					<li><a href="account.html"><img src="../images/account.png" alt="Account Login" id="navicon"></a></li>
 				</ul>
 			 </nav>
 		</div>
 		<article>
-			<p><a href="login.html" onclick="accountPopup(this.href,'myWindow','700','600','25','300','yes');return false">Login Here</a></p>
-			<h1>Home Page</h1>
-			<p>Normal text.</p>		
+			<div class="accountleft">
+				<table class="accountstructure">
+					<tr>
+						<td style="width:20%;padding:0;margin:0;"><img src="../images/account.png" alt="Account Login" style="height:75px; width:75px;"></td>
+						<td style="width:80%;vertical-align: top;padding:0;margin:0;">
+							<p>Hi, Welcome Back!</p>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<button id="infobutton" class="accountoptions" onclick="showInfo()">Account Information</button>
+				<button id="historybutton" class="accountoptions" onclick="showHistory()">Order History</button>
+				<button id="trackingbutton" class="accountoptions" onclick="showTracking()">Order Tracking</button>
+				<button id="settingsbutton" class="accountoptions" onclick="showSettings()">Account Settings</button>
+				<a href="login.html" onclick="accountPopup(this.href,'myWindow','700','600','25','300','yes');return false">
+					<button class="loginbutton">Login</button>
+				</a>
+			</div>
+			<div class="accountright">
+				<div id="infocontent" hidden>
+					<h1 style="padding-top:5%;">Account Information</h1>
+					<form class="checkoutinfo" id="accountframe">
+						<input type="text" value="First Name" name="fname" id="tiny" readonly>
+					
+						<input type="text" value="Last Name" name="lname" id="tiny" readonly>
+						
+						<input type="text" name="id" value="Account Id" id="small" readonly>
+						
+						<br>
+						<textarea rows="6" readonly>Street Address</textarea>
+						
+						<br><br>
+						<input type="email" name="email" value="email234@email.com" id="small"readonly>
+
+						<input type="password" name="password" value="*********" id="small" readonly>
+					</form>
+					<br>
+					<button class="checkoutsubmit" style="font-size:0.6em; width:25%; left:38%;">Edit Account Information</button>
+				</div>
+				<div id="historycontent" hidden>
+					<h1 style="padding-top:5%;">Order History</h1>
+					<p><i>Past orders made with this account are listed below.</i></p><br>
+					<table class="orderhistory">
+						<tr>
+							<th>Order Number</th>
+							<th>Order Date</th>
+							<th>Order Status</th>
+							<th>Payment</th>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+						</tr>
+					</table>
+				</div>
+				<div id="trackingcontent" hidden>
+					<h1 style="padding-top:5%;">Order Tracking</h1>
+					<form class="checkoutinfo" id="accountframe">
+					<p><i>Please enter the information below to track a singular order.</i></p><br>
+						<input type="email" name="email" placeholder="Email Address" id="small" required>
+						
+						<input type="text" name="ordernum" placeholder="Order Number" id="small" required>
+					</form>
+					<button class="checkoutsubmit" style="width:25%; left:38%;">Track Order</button>
+				</div>
+				<div id="settingscontent" hidden>
+					<h1 style="padding-top:5%;">Account Settings</h1>
+					<p style="text-align: left;">Email Notifcation Preferences</p>
+					<div class="columnsplit">
+							<input type="checkbox" id="upcoming" name="upcoming" value="upcoming" checked>
+							<label for="upcoming" style="font-size:0.8em;"> Monthly New Release Newsletters </label><br>
+							<input type="checkbox" id="events" name="events" value="events" checked>
+							<label for="events" style="font-size:0.8em;"> Events </label><br>
+						</div>
+						<div class="columnsplit">
+							<input type="checkbox" id="changes" name="changes" value="changes" checked>
+							<label for="changes" style="font-size:0.8em;"> Changes to the Website </label><br>
+							<input type="checkbox" id="sales" name="sales" value="sales" checked>
+							<label for="sales" style="font-size:0.8em;"> Sales </label><br>
+						</div>
+				</div>
+			</div>
 		</article>
 		<footer id="footer">
-			<p>Click <a href="aboutus.html">here</a> to learn more about us!</p>
+			<p><a href="terms.html">Terms of Use</a> | <a href="aboutus.html">About Us</a> | <a href="tel:5554280940">Call Us</a>
+			 | <a href="aboutus.html">Visit Our Store</a> | <a href="mailto: acmebooksMI.com">Send Us an Email</a></p>
 		</footer>
 	</body>
 </html>
@@ -57,4 +183,46 @@ settings =
 'height='+h+',width='+w+',top='+t+',left='+l+',scrollbars='+scroll+',resizable'
 loginPopUp = window.open(url,winName,settings)
 }
+</script>
+
+<script>
+	// Change div contents with button Javascript
+
+	// get the element
+	var infodiv = document.getElementById('infocontent');
+	var historydiv = document.getElementById('historycontent');
+	var trackingdiv = document.getElementById('trackingcontent');
+	var settingsdiv = document.getElementById('settingscontent');
+
+	// Account Info Selected
+	function showInfo(){
+		infodiv.hidden = false;
+		historydiv.hidden = true;
+		trackingdiv.hidden = true;
+		settingsdiv.hidden = true;
+	}
+
+	//Order History selected
+	function showHistory(){
+		infodiv.hidden = true;
+		historydiv.hidden = false;
+		trackingdiv.hidden = true;
+		settingsdiv.hidden = true;
+	}
+
+	//Order Tracking selected
+	function showTracking(){
+		infodiv.hidden = true;
+		historydiv.hidden = true;
+		trackingdiv.hidden = false;
+		settingsdiv.hidden = true;
+	}
+
+	//Account Settings selected
+	function showSettings(){
+		infodiv.hidden = true;
+		historydiv.hidden = true;
+		trackingdiv.hidden = true;
+		settingsdiv.hidden = false;
+	}
 </script>
