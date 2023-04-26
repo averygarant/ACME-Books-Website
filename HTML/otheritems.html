@@ -42,8 +42,16 @@
 		</div>
 		<article>
 			<h1>Coming Soon!</h1>
+			<hr>
 			<p>In addition to books, we plan to provide you with even more great items! All book themed, of course. We don't to spoil it with to much
 			detail, but be sure to check back here often, you aren't going to wanna miss this!</p>	
+			<br>
+			<p>If you would like to be notified when this page is available, sign up for email updates below!</p>
+			<br><br>
+			<form class="checkoutinfo" style="width:50%; margin-left:25%;" onsubmit="SignUpAlert()">
+					<input type="email" placeholder="Email Address" name="email" required>
+					<button type="submit" class="checkoutsubmit" style="font-size:0.8em; width:30%; left:35%;">Receive Email Updates</button>
+			</form>
 		</article>
 		<footer id="footer">
 			<p><a href="terms.html">Terms of Use</a> | <a href="aboutus.html">About Us</a> | <a href="tel:5554280940">Call Us</a>
@@ -51,3 +59,9 @@
 		</footer>
 	</body>
 </html>
+
+<script>
+	function SignUpAlert() {
+  alert("Thank you for signing up for email updates! You will be sure to receive an email from us in the next 24 hours!");
+}
+</script>
