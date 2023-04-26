@@ -13,8 +13,8 @@
 		<script src="../JavaScript/modernizr.custom.05819.js"></script>
 				
 		<!--
-			ACME Books,Other Items Shopping Page
-			Filename: otheritems.html
+			ACME Books,Checkout Page
+			Filename: index.html
 			Author: Avery Garant & Daniel Roede
 			Date: 
 		-->
@@ -41,9 +41,34 @@
 			 </nav>
 		</div>
 		<article>
-			<h1>Coming Soon!</h1>
-			<p>In addition to books, we plan to provide you with even more great items! All book themed, of course. We don't to spoil it with to much
-			detail, but be sure to check back here often, you aren't going to wanna miss this!</p>	
+			<div class="cartcolumns left">
+				<h1>My Cart</h1>	
+			</div>
+			<div class="cartcolumns right">
+				<table>
+					<tr>
+						<th colspan="2">Order Summary</th>
+					</tr>
+					<tr>
+						<td id="tableleft">Subtotal:</td>
+						<td id="tableright">$0.00</td>
+					</tr>
+						<td id="tableleft">Estimated Shipping:</td>
+						<td id="tableright">$0.00</td>
+					</tr>
+						<td id="tableleft">Estimated Tax:</td>
+						<td id="tableright">$0.00</td>
+					</tr>
+				</table>
+				<hr>
+				<table>
+					<tr>
+						<td id="tableleft">Order Total:</td>
+						<td id="tableright">$0.00</td>
+					</tr>
+				</table>
+				<a href="checkout.html"><button class="checkoutsubmit">CHECKOUT</button></a>
+			</div>
 		</article>
 		<footer id="footer">
 			<p><a href="terms.html">Terms of Use</a> | <a href="aboutus.html">About Us</a> | <a href="tel:5554280940">Call Us</a>

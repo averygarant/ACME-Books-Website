@@ -47,12 +47,38 @@ table{
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+.about p{
+	font-size: 0.8em;
+	text-align: left;
+}
+.about{
+	margin-left: 5%;
+	margin-right: 5%;
+}
+.about h3{
+	padding-top: 10px;
+}
+.about ul{
+	font-size: 0.8em;
+	text-align: left;
+	margin-left: 10%;
+	list-style-type: circle;
+}
 
 /* body and page container */
 body {
 	font-family: Verdana, Geneva, sans-serif;
 	background-color: floralwhite;
 	background-image: url(../images/background.png);
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+body > *{
+  flex-grow: 0;
+}
+body > nav + .container {
+  flex-grow: 1;
 }
 .header-nav-container {
    background-color: #568259;
@@ -67,13 +93,13 @@ header {
    min-width: 800px;
    margin: 0 auto;
    text-align: left;
-   background-color: #568259; /*Green Hex Code*/
+   background-color: #f3fadc; /*Light background color from logo*/
    overflow: auto;
 }
 header h1 {
    width: 60%;
-   margin-top: 5%;
-   color: #f3fadc; /*Light background color from logo*/
+   margin-top: 2%;
+   color: #568259; /*Green Hex Code*/
    font-weight: normal;
    font-size: 2.9em;
    display: inline-block;
@@ -82,7 +108,7 @@ header h1 {
 header div {
    float: left;
    display: inline-block;
-   margin: 2% 0 1% 4%;
+   margin: 0% 0 0% 4%;
    width: 12%;
 }
 #logo {
@@ -91,17 +117,17 @@ header div {
 	height: 125px;
 }
 #title {
-	color: #f3fadc;
+	color: #568259;
 }
 #title a:link {
-	color: #f3fadc;
+	color: #568259;
    text-decoration: none;
 }
 #title a:visited {
-	color: #f3fadc;
+	color: #568259;
 }
 #title a:hover, #title a:focus {
-   	color: #f3fadc;
+   	color: #568259;
 }
 #title a:active {
    position: relative;
@@ -155,6 +181,8 @@ article {
 	padding-left: 3%;
 	padding-right: 3%;
 	padding-bottom: 5%;
+	margin-bottom: 100px;
+	min-height: 100px;
 	float: center;
 	background-color: floralwhite;
 	background-image: url(../images/background.png)
@@ -182,23 +210,68 @@ article div p {
 article p {
    margin: 0 1em 0.4em 1.4em;
 }
+#cover {
+	max-height: 200px;
+	max-width: 250px;
+	position: center;
+	min-width: 110px;
+}
+#spacing {
+	padding-bottom: 325px;
+}
 
-/* main content table if needed*/
+
+/* basic tables*/
 table{
 	width: 90%;
 	margin: 1em auto;
+	font-family: Verdana, Geneva, sans-serif;
 }
 th, td{
 	width: 33.3%;
-	border: 1px solid black;
+	border: none;
 	padding: 0.3em 1em;
-	font-family: Verdana, Geneva, sans-serif;
 }
 th{
-	background-color: #98c13d;
+	background-color: #568259;
+	color: floralwhite;
 }
-tr.specefic-headers th{ 
-	background-color: green;
+#tableleft{
+	text-align: left;
+}
+#tableright{
+	text-align: right;
+}
+.checkoutsubmit{
+	border-radius: 45px;
+	background-color: #568259;
+	color: floralwhite;
+	font-weight: 500;
+	font-size: 1em;
+	width: 50%;
+	margin: 0;
+	position: relative;
+	left: 25%;
+}
+.loginbutton{
+	background-color: #568259;
+	color: floralwhite;
+	font-family: Verdana, Geneva, sans-serif;
+	font-weight: 500;
+	font-size: 0.8em;
+	width: 70%;
+	position: relative;
+	left: 15%;
+}
+.orderhistory{
+	font-size: 0.6em;
+	empty-cells: show;
+}
+.orderhistory td{
+	background-color: floralwhite;
+	font-size: 0.6em;
+	height: 20px;
+	border: 1px solid gray;
 }
 
 /* main content description list if needed*/
@@ -246,10 +319,25 @@ footer {
 	bottom: 0;
 	width: 98%;
 	min-width: 800px;
-	height: 2.5rem;
+	height: 1rem;
 }
 footer p {
    margin: 0.4em;
+   margin-bottom: 2%;
+   font-size: 0.6em;
+   color: floralwhite;
+}
+footer a:link {
+	color: floralwhite;
+}
+footer a:visited {
+	color: floralwhite;
+}
+footer a:hover, footer a:focus {
+	color: #bc9c22;
+}
+footer a:active {
+	color: floralwhite;
 }
 
 /*Database Connections*/
@@ -266,6 +354,30 @@ footer p {
   content: "";
   display: table;
   clear: both;
+}
+#titlebox{
+	margin: 0;
+	padding: 0;
+	padding-bottom: 10px;
+}
+#checkprocess{
+	margin: 15px;
+	border: 2px solid #464e47;
+	padding-top: 0;
+	max-width: 70%;
+}
+#titlebox h3 {
+	font-size: 1.1em;
+	text-align: center;
+	
+}
+
+/*Map*/
+#map {
+    height: 400px; /* The height is 400 pixels */
+    width: 70%; /* The width is the width of the web page */
+	margin-left: 5%;
+	margin-top: 10px;
 }
 
 /*div specs*/
@@ -286,18 +398,68 @@ footer p {
 	float: left;
 	width: 30%;
 }
+.cartcolumns{
+	float: left;
+	padding: 5px;
+	margin: 10px;
+}
+.left{
+	width: 60%;
+	background-color: #f3fadc;
+	min-height: 500px;
+	border-radius: 15px;
+}
+.right{
+	width: 30%;
+	border: 2px solid black;
+	min-height: 250px;
+}
+.accountleft{
+	float: left;
+	padding: 5px;
+	margin: 10px;
+	background-color: #f3fadc;
+	width: 30%;
+	min-height: 500px;
+}
+.accountright{
+	float: left;
+	padding: 5px;
+	margin: 10px;
+	width: 60%;
+	min-height: 500px;
+	border-radius: 15px;
+	border: 2px solid black;
+	min-height: 500px;
+}
+.accountoptions{
+	background-color: #464e47;
+	color: floralwhite;
+	font-family: Verdana, Geneva, sans-serif;
+	font-weight: 500;
+	font-size: 1em;
+	width: 70%;
+	position: relative;
+	left: 15%;
+}
+#accountframe{
+	width: 90%;
+	position: relative;
+	left: 5%;
+}
 
 /*Login Form */
 form {
   border: 3px solid #f1f1f1;
 }
-input[type=text], input[type=password], textarea {
+input[type=text], input[type=password], input[type=phone], input[type=email], textarea, select {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
   border: 1px solid #ccc;
   box-sizing: border-box;
+  font-family: Verdana, Geneva, sans-serif;
 }
 button {
   background-color: #04AA6D;
@@ -337,8 +499,8 @@ span.psw {
 }
 .sendemail{
 	width: auto;
-  padding: 10px 18px;
-  background-color: #04AA6D;
+	padding: 10px 18px;
+	background-color: #04AA6D;
 }
 
 /*Inventory Request Form*/
@@ -355,6 +517,26 @@ span.psw {
 	padding: 10px 18px;
 	background-color: #568259;
 }
+
+/*Checkout Forms*/
+.checkoutinfo {
+	padding: 10px;
+	font-size: 12pt;
+	border: none;
+}
+#small{
+	width: 49%;
+	display: inline-block;
+}
+#large{
+	width: 99%;
+	display: inline-block;
+}
+#tiny{
+	width: 24%;
+	display: inline-block;
+}
+
 
 /* Change styles for span and cancel button on extra small screens */
 @media screen and (max-width: 300px) {
