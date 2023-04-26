@@ -48,14 +48,14 @@
 					<embed src="https://c3abt829.caspio.com/dp/ff03c000e53cfaecc5074e868b48" height="800" width="80%"/>
 				</div>
 				<div class="columnsplit">
-					<form onsubmit="" class="inventoryform">
+					<form onsubmit="RecAlert()" class="inventoryform">
 						<h3 style="text-align:center;">Looking for more options?</h3><hr>
 						<p>We are always looking to expand our inventory and to sell more of what users are looking to see.
 						If you have anything you are looking for us to sell more of, submit a form below with your requests!</p>
 						
 						<br>
 						<label for="name"><i>Name</i></label>
-						<input type="text" placeholder="Enter Your Name" name="name" required>
+						<input type="text" placeholder="Enter Your Name" name="name" id="name" required>
 						
 						<label for="location"><i>Which state are you from?</i></label><br>
 						<select name="location">
@@ -144,3 +144,11 @@
 		</footer>
 	</body>
 </html>
+
+<script>
+	function RecAlert() {
+	var nameval = document.getElementById("name").value;
+  alert("Thank you for you recommendations " + nameval + 
+  "!\n\nWe will be sure to review your form submission and try our hardest to make your requests a reality!");
+}
+</script>

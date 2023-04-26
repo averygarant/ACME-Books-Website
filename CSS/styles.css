@@ -154,7 +154,7 @@ nav.sitenavigation a {
    display: inline-block;
 }
 nav.sitenavigation a:link {
-   color: rgb(246,224,65);
+   color: #f3fadc;
    text-decoration: none;
 }
 nav.sitenavigation a:visited {
@@ -215,6 +215,7 @@ article p {
 	max-width: 250px;
 	position: center;
 	min-width: 110px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 #spacing {
 	padding-bottom: 325px;
@@ -371,6 +372,120 @@ footer a:active {
 	
 }
 
+/*Slideshow Details*/
+.mySlides {
+  display: none;
+}
+
+img {
+  vertical-align: middle;
+}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 800px;
+  position: relative;
+  margin: auto;
+  max-height: 400px;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: black;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: 0;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev {
+  left: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover */
+.prev:hover,
+.next:hover {
+  background-color: gray;
+}
+
+/* Number text (1/2 etc) */
+.numbertext {
+  color: dark gray;
+  font-size: 10px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: gray;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+  background-color: #464e47;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: .4
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@media only screen and (max-width: 300px) {
+
+  .prev,
+  .next,
+  {
+    font-size: 11px;
+  }
+}
+
 /*Map*/
 #map {
     height: 400px; /* The height is 400 pixels */
@@ -385,8 +500,11 @@ footer a:active {
 	border-style:solid;
 	border-color:black;
 	margin: auto;
-	width: 70%;
+	width: 80%;
 	padding: 10px;
+	justify-content: center;
+	padding-top: 15px;
+	padding-bottom: 15px;
 }
 #saleFeatures{
 	border-width:2px;
@@ -396,6 +514,15 @@ footer a:active {
 	padding: 5px;
 	float: left;
 	width: 30%;
+	justify-content: center;
+}
+#saleFeatures img, #features img{
+	display: inline-block;
+	justify-content: center;
+	padding: 2px;
+}
+#imgcontainer{
+	margin-left: 8%;
 }
 .cartcolumns{
 	float: left;
@@ -500,6 +627,12 @@ span.psw {
 	width: auto;
 	padding: 10px 18px;
 	background-color: #04AA6D;
+}
+.cancel{
+	width: auto;
+	padding: 10px 18px;
+	background-color: red;
+	display: inline-block;
 }
 
 /*Inventory Request Form*/
